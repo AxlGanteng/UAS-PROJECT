@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Belanja {
+    public Belanja(String namaBarang) {
+        NamaBarang = namaBarang;
+    }
+
+    private String NamaBarang;
+
+    public Belanja(int hargaBarang) {
+        HargaBarang = hargaBarang;
+    }
+
+    public String getNamaBarang() {
+        return NamaBarang;
+    }
+
+    public void setNamaBarang(String namaBarang) {
+        NamaBarang = namaBarang;
+    }
+
+    public int getHargaBarang() {
+        return HargaBarang;
+    }
+
+    public void setHargaBarang(int hargaBarang) {
+        HargaBarang = hargaBarang;
+    }
+
+    private int HargaBarang;
+
+    public int getJumBelanja() {
+        return JumBelanja;
+    }
+
+    public void setJumBelanja(int jumBelanja) {
+        JumBelanja = jumBelanja;
+    }
+
+    private int JumBelanja;
+    public static void main(String[] args) {
+        int jum = 4;
+        ArrayList<Belanja>P=new ArrayList<>();
+        for (int index = 0; index < jum; index++){
+            Belanja s = new Belanja();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Type Item Name = ");
+            s.setNamaBarang(sc.nextLine());
+            System.out.println("Type Item Price");
+            s.setHargaBarang(sc.nextInt());
+            System.out.println("Type Item QTY");
+            s.setJumBelanja(sc.nextInt());
+            P.add(s);
+        }
+        System.out.println(".............................................");
+        System.out.format("TOTAL BELANJA : %60S", new Belanja().Cetak);
+    }
+}
